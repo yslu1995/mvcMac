@@ -35,10 +35,18 @@ public class Category {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session = sqlSessionFactory.openSession();
 
+        Category c= session.selectOne("getCategory",3);
+        c.setName("修改了的Category名稱");
+        session.update("updateCategory",c);
+        listAll(session);
+        session.commit();
+        session.close();
+
+    }
+    private static void listAll(SqlSession session) {
         List<Category> cs = session.selectList("listCategory");
         for (Category c : cs) {
             System.out.println(c.getName());
         }
-
     }
 }

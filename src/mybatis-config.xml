@@ -25,6 +25,8 @@
     <!--这个路径读取xml配置的路径-->
     <mappers>
         <mapper resource="main/pojo/Category.xml"/>
+        <!--一个一个往下加-->
+        <!--<mapper resource="main/pojo/Category.xml"/>-->
     </mappers>
 
 </configuration>
