@@ -12,15 +12,19 @@ import java.util.List;
 public class Category {
     private int id;
     private String name;
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -29,9 +33,9 @@ public class Category {
         String resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-        SqlSession session=sqlSessionFactory.openSession();
+        SqlSession session = sqlSessionFactory.openSession();
 
-        List<Category> cs=session.selectList("listCategory");
+        List<Category> cs = session.selectList("listCategory");
         for (Category c : cs) {
             System.out.println(c.getName());
         }
