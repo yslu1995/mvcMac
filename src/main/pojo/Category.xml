@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--表示命名空间是com.how2java.pojo，在后续调用sql语句的时候，会用到它-->
+<mapper namespace="com.how2java.pojo">
+    <select id="listCategory" resultType="Category">
+            select
+                *
+            from   category_
+        </select>
+</mapper>
