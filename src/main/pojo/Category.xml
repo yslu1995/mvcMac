@@ -5,6 +5,8 @@
 
 <!--表示命名空间是com.how2java.pojo，在后续调用sql语句的时候，会用到它-->
 <mapper namespace="com.how2java.pojo">
+    <!--以启动对Category对象的二级缓存-->
+    <cache/>
     <insert id="addCategory" parameterType="Category" >
             insert into category_ ( id,name ) values (#{id},#{name})
         </insert>
@@ -13,7 +15,7 @@
             delete from category_ where id= #{id}
         </delete>
 
-    <select id="getCategory" parameterType="_int" resultType="Category">
+    <select id="getCategory" parameterType="int" resultType="Category">
             select * from   category_  where id= #{id}
         </select>
 
