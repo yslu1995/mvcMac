@@ -35,11 +35,17 @@ public class Category {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session = sqlSessionFactory.openSession();
 
-
-        Category c = session.selectOne("getCategory", 3);
-        c.setName("修改了的Category名称");
-        session.update("updateCategory",c);
-        listAll(session);
+        Category c =new Category();
+        c.setName("殴打女王ifwin发");
+        c.setId(23);
+        Category c2 =new Category();
+        c2.setName("殴打女王ifwin发dddddddddddddddddddddddddddddddddddddddddddddddddd");
+        c2.setId(24);
+//        Category c = session.selectOne("getCategory", 3);
+//        c.setName("修改了的Category名称");
+        session.insert("addCategory",c);
+        session.insert("addCategory",c2);
+//        listAll(session);
         session.commit();
         session.close();
 
