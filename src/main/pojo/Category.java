@@ -43,9 +43,11 @@ public class Category {
         c2.setId(24);
 //        Category c = session.selectOne("getCategory", 3);
 //        c.setName("修改了的Category名称");
+        //        listAll(session);
         session.insert("addCategory",c);
         session.insert("addCategory",c2);
-//        listAll(session);
+
+        /*事务提交*/
         session.commit();
         session.close();
 

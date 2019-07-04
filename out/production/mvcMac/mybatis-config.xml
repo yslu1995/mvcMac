@@ -12,6 +12,7 @@
     <!--读取数据库信息-->
     <environments default="development">
         <environment id="development">
+            <!-- 开启事务 -->
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
