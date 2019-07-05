@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--在MyBatis中，Mapper中的namespace用于绑定Dao接口的，即面向接口编程。
+它的好处在于当使用了namespace之后就可以不用写接口实现类，业务逻辑会直接通过这个绑定寻找到相对应的SQL语句进行对应的数据处理
+-->
+<mapper namespace="main.mapper.CategoryMapper">
+    <insert id="add" parameterType="Category">
+            insert into category_ ( name ) values (#{name})
+        </insert>
+
+    <delete id="delete" parameterType="Category">
+            delete from category_ where id= #{id}
+        </delete>
+
+    <select id="get" parameterType="int" resultType="Category">
+            select * from   category_  where id= #{id}
+        </select>
+
+    <update id="update" parameterType="Category">
+            update category_ set name=#{name} where id=#{id}
+        </update>
+    <select id="list" resultType="Category">
+            select * from   category_
+        </select>
+</mapper>
